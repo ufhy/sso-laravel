@@ -31,10 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'github' => [
-        'client_id' => '99e31726-0671-40c0-9b01-6e9d25ae733c',
-        'client_secret' => 'r4WwEYp60MFDfNNlrMjUTJogJCYq3h5W7YSFx1eQ',
-        'redirect' => 'http://localhost/sso-ci3/public/oauth_client/callback',
+    'ess' => [
+        'client_id' => env('ESS_CLIENT_ID'),
+        'client_secret' => env('ESS_CLIENT_SECRET'),
+        'redirect' => env('ESS_REDIRECT'),
     ],
 
 ];

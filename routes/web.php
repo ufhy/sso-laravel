@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +13,9 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-Route::get('/auth/redirect', function () {
-    return Socialite::driver('github')->redirect();
-});
+Route::get('/auth/ess', [\App\Http\Controllers\EssLoginController::class, 'redirect']);
 
-Route::get('/auth/callback', function () {
-    $user = Socialite::driver('github')->user();
-});
+Route::get('/auth/ess/callback', [\App\Http\Controllers\EssLoginController::class, 'callback']);
 
 Route::get('/', function () {
     return view('welcome');
